@@ -1,0 +1,39 @@
+python rag_agno_qdrant_playground.py `
+  --docs "C:\documents\GEN AI\Agno\Agno-Framework\XO-testing\data\user_abc" `
+  --chunk semantic `
+  --chunk-size 1000 `
+  --similarity-threshold 0.5 `
+  --embedder-id text-embedding-3-large `
+  --search hybrid `
+  --max-results 5 `
+  --collection sample_akreage_semantic_chunking 
+
+python rag_agno_qdrant_playground.py `
+  --docs "C:\documents\GEN AI\Agno\Agno-Framework\XO-testing\data\user_abc" `
+  --chunk agentic `
+  --chunk-size 1000 `
+  --similarity-threshold 0.5 `
+  --embedder-id text-embedding-3-large `
+  --search hybrid `
+  --max-results 5 `
+  --collection sample_akreage_agentic_chunking 
+
+
+python rag_agno_qdrant_playground.py `
+  --docs "C:\documents\GEN AI\Agno\Agno-Framework\XO-testing\data\user_finance\leac203.pdf" `
+  --chunk semantic `
+  --chunk-size 1200 `
+  --similarity-threshold 0.5 `
+  --embedder-id text-embedding-3-large `
+  --search hybrid `
+  --max-results 5 `
+  --collection kb_best_overall 
+
+python rag_agno_qdrant_playground.py `
+  --docs "C:\documents\GEN AI\Agno\Agno-Framework\XO-testing\data\user_finance\leac203.pdf" `
+  --chunk semantic `
+  --similarity-threshold 0.5 `
+  --embedder-id text-embedding-3-large `
+  --search hybrid `
+  --max-results 5 `
+  --collection sample_finance_semantic_lowthreshold
