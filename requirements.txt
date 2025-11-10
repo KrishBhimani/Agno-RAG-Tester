@@ -1,0 +1,7 @@
+agno
+typer
+rich
+qdrant-client
+openai
+pypdf
+cohere
