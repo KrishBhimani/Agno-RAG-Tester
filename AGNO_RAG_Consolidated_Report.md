@@ -7,6 +7,20 @@ To benchmark retrieval, reasoning, latency, and accuracy across chunking, embedd
 
 ---
 
+## 🧠 Overview: How the Evaluation Worked
+
+Below is a simplified flow of how each configuration was tested and analyzed.
+
+```mermaid
+graph TD
+    A[📄 Documents] --> B[🧩 Chunking Strategies]
+    B --> C[🔢 Embedding Models]
+    C --> D[🧭 Search & Ranking (Vector / Keyword / Hybrid)]
+    D --> E[🧠 AGNO Agent Retrieval]
+    E --> F[📊 Evaluation Metrics: Faithfulness, Completeness, Latency]
+```
+---
+
 ## ⚙️ Category Glossary
 
 | Category | Meaning | Typical Values |
