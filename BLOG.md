@@ -1,5 +1,3 @@
-# We Broke Down How AI Thinks — It Wasn’t the Model That Needed Fixing
-or
 # Everyone’s Scaling Context Windows. Almost No One’s Fixing Retrieval.
 
 Everyone is racing to make AI smarter.  
@@ -50,6 +48,63 @@ We evaluated:
 - **Reranking:** re-orders top hits with a cross-encoder reranker for finer accuracy.
 
 ---
+## 🧠 Architectural Overview
+
+The diagram below summarizes the pipeline we evaluated across all configurations:
+```mermaid
+graph LR
+
+subgraph Input
+    A["Documents"]
+end
+
+subgraph Preprocessing
+    B["Chunking Strategies"]
+    BA["Fixed"]
+    BB["Semantic"]
+    BC["Recursive"]
+    BD["Agentic"]
+    BE["Sliding Window"]
+    B --> BA
+    B --> BB
+    B --> BC
+    B --> BD
+    B --> BE
+end
+
+subgraph Embedding
+    C["Embedding Models"]
+    CA["Small Embedding"]
+    CB["Large Embedding"]
+    C --> CA
+    C --> CB
+end
+
+subgraph Retrieval
+    D["Search Methods"]
+    DA["Vector Search"]
+    DB["Keyword Search"]
+    DC["Hybrid Search"]
+    DD["Reranking"]
+    D --> DA
+    D --> DB
+    D --> DC
+    D --> DD
+end
+
+subgraph Output
+    E["AGNO Agent"]
+    F["Evaluation Metrics"]
+end
+
+%% Create slight downward flow (works on GitHub)
+A --> B
+B --> C
+C --> D
+D --> E
+E --> F
+
+```
 
 ## 🔍 What We Learned
 
