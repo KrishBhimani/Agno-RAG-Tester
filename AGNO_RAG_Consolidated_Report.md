@@ -11,13 +11,60 @@ To benchmark retrieval, reasoning, latency, and accuracy across chunking, embedd
 
 Below is a simplified flow of how each configuration was tested and analyzed.
 
+
 ```mermaid
-graph TD
-    A[📄 Documents] --> B[🧩 Chunking Strategies]
-    B --> C[🔢 Embedding Models]
-    C --> D[🧭 Search & Ranking (Vector / Keyword / Hybrid)]
-    D --> E[🧠 AGNO Agent Retrieval]
-    E --> F[📊 Evaluation Metrics: Faithfulness, Completeness, Latency]
+graph LR
+
+subgraph Input
+    A["Documents"]
+end
+
+subgraph Preprocessing
+    B["Chunking Strategies"]
+    BA["Fixed"]
+    BB["Semantic"]
+    BC["Recursive"]
+    BD["Agentic"]
+    BE["Sliding Window"]
+    B --> BA
+    B --> BB
+    B --> BC
+    B --> BD
+    B --> BE
+end
+
+subgraph Embedding
+    C["Embedding Models"]
+    CA["Small Embedding"]
+    CB["Large Embedding"]
+    C --> CA
+    C --> CB
+end
+
+subgraph Retrieval
+    D["Search Methods"]
+    DA["Vector Search"]
+    DB["Keyword Search"]
+    DC["Hybrid Search"]
+    DD["Reranking"]
+    D --> DA
+    D --> DB
+    D --> DC
+    D --> DD
+end
+
+subgraph Output
+    E["AGNO Agent"]
+    F["Evaluation Metrics"]
+end
+
+%% Create slight downward flow (works on GitHub)
+A --> B
+B --> C
+C --> D
+D --> E
+E --> F
+
 ```
 ---
 
